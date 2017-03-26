@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		(function(){
+			
+			//朋友圈
+			var brother = "bob" ;
+			var sister = "lisa" ;
+			var friend1 = "lihua" ;
+			var friend2 = "wh" ;
+			var friend3 = "haha" ;
+			var mom = "ada" ;
+			var dad = "mark" ;
+			var grandpa = "xxx" ;
+			var grandm = "tyy" ;
+			const girl  = "lio";
+			var person = {brother,sister,friend1,friend2,friend3,mom,dad,grandpa,grandm,girl}
+			console.log(person);//Object {brother: "bob", sister:"lisa",.....}
+			//对象创建
+			var set = new Set([brother,sister,friend1,friend2,mom,dad,grandpa,grandm,girl]);
+			//遍历set
+			for(let item of set.entries()){
+				console.log(item);
+			}
+		 	var addp = set.add(friend3);
+		 	//console.log(addp);
+			set.delete(friend2);
+
+			//利用 map  实现增添改查
+			var items = [["brother","bob"],["sister","lisa"],["friend1","lihua"],["friend2","wh"]] ;
+			var m = new Map();
+			items.forEach(([key,value])=>m.set(key,value));
+
+			//遍历map
+			for(let  key of  m.keys()){
+				console.log(key) ;
+			}
+			for(let value of m.values()){
+				console.log(value) ;
+			}
+			
+			//map操作方法增删改查
+			m.set(["mom","aaa"]);
+			for( let [key,value] of m.entries()){
+				console.log(key,value);
+			}
+			console.log(m.delete("mom")) ;
+			for( let [key,value] of m.entries()){
+				console.log(key,value);
+			}
+			
+			m.set("friend1","hehe");
+			for( let [key,value] of m.entries()){
+				console.log(key,value);
+			}
+			m.set(girl,"sd");
+			for( let [key,value] of m.entries()){
+				console.log(key,value);
+			}
+		})()
+	</script>
+</body>
+</html>
